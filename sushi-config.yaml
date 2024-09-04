@@ -1,0 +1,58 @@
+
+# ╭────────────────────────────ImplementationGuide-hl7.org.nz.hpi.json─────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see:                                                                    │
+# │  http://build.fhir.org/ig/HL7/fhir-shorthand/branches/beta/sushi.html#ig-development           │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: tewhatuora.digital-tooling.hip-cores
+#canonical: https://ig.hip.digital.health.nz/base
+canonical: https://common-ig.hip.digital.health.nz
+url: https://common-ig.hip-uat.digital.health.nz/site
+version: 1.8.9
+name: NewZealandHipCommonTerminologyIG
+title: HIP FHIR Common Terminology  Guide
+status: active
+publisher:
+  name: Te Whatu Ora
+  email: mailto:integration@health.govt.nz
+description: Common terminology used by HIP FHIR services
+license: CC0-1.0 
+date: 2022-08-03
+releaselabel: Release
+copyrightyear: '2022+'
+
+dependencies:
+   fhir.org.nz.ig.base:
+     #uri: 'http://build.fhir.org/ig/HL7NZ/nzbase/branches/master'
+     uri: 'https://fhir.org.nz/ig/base/'
+     #version: dev
+     version: 2.0.0
+     
+     
+fhirVersion: 4.0.1
+
+parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
+  apply-version: 'false'
+  show-inherited-invariants: 'false'
+  usage-stats-opt-out: 'true'
+
+
+
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  IG Home: index.html
+  # API: capabilityStatement.html
+  #Profiles: profiles.html
+  #Extensions: extensions.html
+  #Identifiers: namingSystems.html
+  Terminology: terminology.html
+  Table of Contents: toc.html
+  Artifact Index: artifacts.html
+  Support:
+    FHIR Spec: new-tab http://hl7.org/fhir/R4/index.html
+    Package: package.tgz
+
+
