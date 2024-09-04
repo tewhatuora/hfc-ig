@@ -4,7 +4,7 @@
 # │  supported properties, see:                                                                    │
 # │  http://build.fhir.org/ig/HL7/fhir-shorthand/branches/beta/sushi.html#ig-development           │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: tewhatuora.digital-tooling.hip-cores
+id: tewhatuora.hip-core
 #canonical: https://ig.hip.digital.health.nz/base
 canonical: https://common-ig.hip.digital.health.nz
 url: https://common-ig.hip-uat.digital.health.nz/site
