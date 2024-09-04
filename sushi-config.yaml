@@ -22,11 +22,12 @@ releaselabel: Release
 copyrightyear: '2022+'
 
 dependencies:
-   fhir.org.nz.ig.base:
-     #uri: 'http://build.fhir.org/ig/HL7NZ/nzbase/branches/master'
-     uri: 'https://fhir.org.nz/ig/base/'
-     #version: dev
-     version: 2.0.0
+  fhir.org.nz.ig.base:
+    #uri: 'http://build.fhir.org/ig/HL7NZ/nzbase/branches/master'
+    uri: 'https://fhir.org.nz/ig/base/'
+    #version: dev
+    version: 2.0.0
+  tewhatuora.digitaltooling: 0.0.11
      
      
 fhirVersion: 4.0.1
@@ -35,9 +36,6 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   apply-version: 'false'
   show-inherited-invariants: 'false'
   usage-stats-opt-out: 'true'
-
-
-
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
