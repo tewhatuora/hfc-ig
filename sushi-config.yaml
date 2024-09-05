@@ -17,7 +17,7 @@ publisher:
   email: mailto:integration@health.govt.nz
 description: Common terminology used by HIP FHIR services
 license: CC0-1.0 
-date: 2022-08-03
+date: 2024-09-05
 releaselabel: Release
 copyrightyear: '2022+'
 
@@ -28,8 +28,7 @@ dependencies:
     #version: dev
     version: 3.0.0
   tewhatuora.digitaltooling: 0.0.11
-     
-     
+
 fhirVersion: 4.0.1
 
 parameters:
