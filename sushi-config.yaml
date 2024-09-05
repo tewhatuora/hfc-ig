@@ -6,8 +6,8 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: tewhatuora.hip-core
 #canonical: https://ig.hip.digital.health.nz/base
-canonical: https://common-ig.hip.digital.health.nz
-url: https://common-ig.hip-uat.digital.health.nz/site
+canonical: https://fhir-ig.digital.health.nz
+url: https://fhir-ig.digital.health.nz/HIP-FHIR-Common
 version: 1.8.9
 name: NewZealandHipCommonTerminologyIG
 title: HIP FHIR Common Terminology  Guide
@@ -24,19 +24,159 @@ copyrightyear: '2022+'
 dependencies:
   fhir.org.nz.ig.base:
     #uri: 'http://build.fhir.org/ig/HL7NZ/nzbase/branches/master'
-    uri: 'https://fhir.org.nz/ig/base/'
+    uri: 'https://fhir.org.nz/ig/base/ns'
     #version: dev
-    version: 2.0.0
+    version: 3.0.0
   tewhatuora.digitaltooling: 0.0.11
      
      
 fhirVersion: 4.0.1
 
-parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
-  apply-version: 'false'
-  show-inherited-invariants: 'false'
+parameters:
+  show-inherited-invariants: false
+  bundle-references-resolve: false
+  default-contact: true              # publish contact info for all resources (using canonical meta contact where specified)
+  apply-version: false               # stop publisher from overwriting artefact-specific versions
+  default-version: true              # versions of canonicals that specify their own version no longer overwritten by the IG publisher
+  suppressed-ids: $examples          # stop IG publisher generating ids for all example resource instances
+  display-warnings: true 
   usage-stats-opt-out: 'true'
-
+  special-url:
+    # standards canonical urls
+    - https://standards.digital.health.nz/ns/address-not-validated-reason-code
+    - https://standards.digital.health.nz/ns/coverage-type-code
+    - https://standards.digital.health.nz/ns/ethnic-group-level-4-code
+    - https://standards.digital.health.nz/ns/ethnic-group-level-2-code
+    - https://standards.digital.health.nz/ns/ethnic-group-level-3-code
+    - https://standards.digital.health.nz/ns/gender-code
+    - https://standards.digital.health.nz/ns/hpi-name-type
+    - https://standards.digital.health.nz/ns/hpi-address-purpose
+    - https://standards.digital.health.nz/ns/hpi-address-type
+    - https://standards.digital.health.nz/ns/hpi-address-use
+    - https://standards.digital.health.nz/ns/hpi-contact-type
+    - https://standards.digital.health.nz/ns/hpi-contact-usage
+    - https://standards.digital.health.nz/ns/country-code
+    - https://standards.digital.health.nz/ns/hpi-disestablishment-reason
+    - https://standards.digital.health.nz/ns/hpi-facility-type
+    - https://standards.digital.health.nz/ns/hpi-legacy-language
+    - https://standards.digital.health.nz/ns/hpi-legal-entity-type
+    - https://standards.digital.health.nz/ns/location-type-code
+    - https://standards.digital.health.nz/ns/hpi-name-qualifier
+    - https://standards.digital.health.nz/ns/organisation-type-code
+    - https://standards.digital.health.nz/ns/hpi-ra-identifier-code
+    - https://standards.digital.health.nz/ns/hpi-registration-status
+    - https://standards.digital.health.nz/ns/hpi-registration-type
+    - https://standards.digital.health.nz/ns/practitioner-registration-authority-code
+    - https://standards.digital.health.nz/ns/name-prefix-code
+    - https://standards.digital.health.nz/ns/name-suffix-code
+    - https://standards.digital.health.nz/nes-enrolment-termination-reason
+    - https://standards.digital.health.nz/nes-enrolment-type
+    - https://standards.digital.health.nz/ns/nes-entitlement-identifier-code
+    - https://standards.digital.health.nz/ns/nes-event-type
+    - https://standards.digital.health.nz/ns/nhi-address-type
+    - https://standards.digital.health.nz/ns/nhi-name-use-extra-code
+    - https://standards.digital.health.nz/ns/nzscc4n
+    - https://standards.digital.health.nz/ns/practitioner-scope-of-practice-code
+    - https://fhir-ig.digital.health.nz/HIP-FHIR-Common
+    - http://www.abs.gov.au/ausstats/abs@.nsf/mf/1220.0
+    - http://snomed.info/sct/223366009
+    - https://standards.digital.health.nz/ns/hip-error-code
+    - urn:iso:std:iso:3166
+    - urn:iso:std:iso:639:-3
+    - urn:moh:nzscc99
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/country-code-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/ethnic-group-level4-to-level3
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/gender-from-r4
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/gender-to-r4
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-contact-type
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-contact-type-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-contact-usage
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-contact-usage-down
+    - https://nzhts.digital.health.nz/cm/disestablishment-reason
+    - https://nzhts.digital.health.nz/cm/disestablishment-reason-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-facility-address-purpose
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-facility-address-purpose-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-facility-address-type
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-facility-address-type-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-facility-name-qualifier
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-facility-name-qualifier-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-facility-type
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-facility-type-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/legacy1.0-to-iso639-3-2007
+    - https://nzhts.digital.health.nz/cm/hpi-name-type-to-name-use
+    - https://nzhts.digital.health.nz/cm/hpi-name-use-to-name-type
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-organisation-address-purpose
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-organisation-address-purpose-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-organisation-address-type
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-organisation-address-type-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-organisation-name-qualifier
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-organisation-name-qualifier-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-organisation-type
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-registration-status
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-registration-status-down
+    - https://nzhts.digital.health.nz/fhir/ConceptMap/hpi-registration-type
+    - https://nzhts.digital.health.nz/cm/name-prefix-down
+    - https://nzhts.digital.health.nz/cm/nhi-address-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nhi-identifier-use-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nhi-address-not-validated-reason-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/country-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/coverage-type-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/gender-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-contact-point-system-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-contact-point-use-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-contact-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-contact-usage
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-disestablishment-reason
+    - https://nzhts.digital.health.nz/fhir/ValueSet/ethnic-group-level-2-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/ethnic-group-level-3-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/ethnic-group-level-4-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-facility-address-purpose
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-facility-address-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-facility-name-qualifier
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-facility-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-human-name-use-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-identifier-use-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/language-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-legacy-language-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-legal-entity-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-location-address-use-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/location-alias-type-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-location-status-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/location-type-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-name-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-nzscc4n
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-organisation-address-purpose
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-organisation-address-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-organisation-address-use-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-organisation-name-qualifier
+    - https://nzhts.digital.health.nz/fhir/ValueSet/organisation-type-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/organization-alias-type-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/practitioner-role-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-ra-identifier-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-registration-status
+    - https://nzhts.digital.health.nz/fhir/ValueSet/hpi-registration-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/practitioner-registration-authority-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/mws-clinical-status
+    - https://nzhts.digital.health.nz/fhir/ValueSet/mws-substance-combined
+    - https://nzhts.digital.health.nz/fhir/ValueSet/mws-verification-status
+    - https://nzhts.digital.health.nz/fhir/ValueSet/name-prefix-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/name-suffix-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-termination-reason
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nes-enrolment-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nes-entitlement-identifier-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nes-episode-of-care-status
+    - https://nzhts.digital.health.nz/fhir/ValueSet/addressType
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nhi-address-type
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nhiaddressUse
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nz-citizenship-source-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/country-of-birth-source-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/date-of-birth-source-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/dod-information-source-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/name-source-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nhi-name-use-extra-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/nz-residency-source-code
+    - https://nzhts.digital.health.nz/fhir/ValueSet/practitioner-scope-of-practice-code
+    
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
