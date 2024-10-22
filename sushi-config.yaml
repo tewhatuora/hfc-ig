@@ -6,9 +6,9 @@
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: tewhatuora.hip-core
 #canonical: https://ig.hip.digital.health.nz/base
-canonical: https://fhir-ig.digital.health.nz
+canonical: https://fhir-ig.digital.health.nz/HIP-FHIR-Common
 url: https://fhir-ig.digital.health.nz/HIP-FHIR-Common
-version: 1.9.1
+version: 1.9.2
 name: NewZealandHipCommonTerminologyIG
 title: HIP FHIR Common Terminology  Guide
 status: active
